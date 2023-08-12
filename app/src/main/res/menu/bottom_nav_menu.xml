@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_home"
+        android:title="@string/home_title"
+        android:icon="@drawable/icon_home"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_Recetas"
+        android:title="@string/home_Recetas"
+        android:icon="@drawable/icon_dog_food"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_Ejercicios"
+        android:title="@string/home_Ejercicios"
+        android:icon="@drawable/icon_pets"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_Enfermedades"
+        android:title="@string/home_Enfermedades"
+        android:icon="@drawable/icon_sick"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_profile"
+        android:title="@string/home_profile"
+        android:icon="@drawable/icon_account_box"
+        app:showAsAction="never"/>
+
+</menu>
