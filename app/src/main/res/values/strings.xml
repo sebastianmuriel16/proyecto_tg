@@ -7,4 +7,13 @@
     <string name="home_Enfermedades">Enfermedades</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="main_auth_welcome">Bienvenido\n</string>
+    <string name="dialog_delete_title">Eliminar la publicacion?</string>
+    <string name="dialog_delete_confirm">Eliminar?\n</string>
+    <string name="home_delte_photo_error">Error al eliminar la publicacion</string>
+    <string name="dialog_delete_cancel">Cancelar</string>
+    <string name="post_message_title">Seleccione una imagen</string>
+    <string name="dialog_logout_title">Desea Cerrar sesion</string>
+    <string name="dialog_logout_confirm">Cerrar?</string>
+    <string name="dialog_logout_cancel">Cancelar?</string>
 </resources>

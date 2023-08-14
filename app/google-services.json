@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "142444510229",
+    "project_id": "proyectotg-8ef06",
+    "storage_bucket": "proyectotg-8ef06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142444510229:android:bff2d5e5cd861b2472e21c",
+        "android_client_info": {
+          "package_name": "com.example.prototipo_canino"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142444510229-fuggbtteaaa6t0mbe8174aua7ujv9a6b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKwXzNZZmPgb6tlUT_rWET4_UyB21GbvM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142444510229-fuggbtteaaa6t0mbe8174aua7ujv9a6b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
