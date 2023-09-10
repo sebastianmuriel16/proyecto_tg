@@ -16,4 +16,8 @@
     <string name="dialog_logout_title">Desea Cerrar sesion</string>
     <string name="dialog_logout_confirm">Cerrar?</string>
     <string name="dialog_logout_cancel">Cancelar?</string>
+    <string name="post_message_valid_title">Por favor, añada un titulo</string>
+    <string name="helper_requiered">Este campo es requerido\n</string>
+    <string name="post_message_post_fail">No se logro subir la foto\n</string>
+    <string name="post_succes">Foto publicada\n</string>
 </resources>

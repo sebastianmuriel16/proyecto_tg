@@ -2,6 +2,7 @@ package com.example.prototipo_canino
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -40,6 +41,10 @@ class HomeFragment : Fragment(), FragmentAux {
         return mBinding.root
     }
 
+
+
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -51,6 +56,8 @@ class HomeFragment : Fragment(), FragmentAux {
     private fun setupFirebase(){
         mSnapshotsRef = FirebaseDatabase.getInstance().reference.child(SnapshotsApplication.PATH_SNAPSHOTS)
     }
+
+
 
     private fun setupAdapter(){
         val query = mSnapshotsRef

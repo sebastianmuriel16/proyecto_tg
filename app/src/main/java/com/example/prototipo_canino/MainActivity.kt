@@ -2,6 +2,8 @@ package com.example.prototipo_canino
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
@@ -87,6 +89,7 @@ class MainActivity : AppCompatActivity(), MainAux {
         val ejerciciosFragment = EjerciciosFragment()
         val enfermedadesFragment = EnfermedadesFragment()
         val profileFragment = ProfileFragment()
+        val AddFragment = AddFragment()
 
         mActiveFragment = homeFragment
 
@@ -103,32 +106,59 @@ class MainActivity : AppCompatActivity(), MainAux {
             .add(R.id.hostFragment, recetasFragment, recetasFragment::class.java.name)
             .hide(recetasFragment).commit()
         fragmentManager.beginTransaction()
+            .add(R.id.hostFragment, AddFragment, AddFragment::class.java.name)
+            .hide(AddFragment).commit()
+        fragmentManager.beginTransaction()
             .add(R.id.hostFragment, homeFragment, HomeFragment::class.java.name)
             .commit()
+
+        mBinding.addButton.setOnClickListener {
+            fragmentManager.beginTransaction().hide(mActiveFragment).show(AddFragment).commit()
+            mActiveFragment = AddFragment
+            ocultarBtnAdd()
+            ocultarBtnBack(true)
+        }
+
+        mBinding.backForo.setOnClickListener {
+            fragmentManager.beginTransaction().hide(mActiveFragment).show(homeFragment).commit()
+            mActiveFragment = homeFragment
+            ocultarBtnAdd(true)
+            ocultarBtnBack()
+        }
 
         mBinding.bottomNav.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.action_home -> {
+                    ocultarBtnAdd(true)
+                    ocultarBtnBack()
                     fragmentManager.beginTransaction().hide(mActiveFragment).show(homeFragment).commit()
                     mActiveFragment = homeFragment
                     true
                 }
                 R.id.action_Recetas -> {
+                    ocultarBtnAdd()
+                    ocultarBtnBack()
                     fragmentManager.beginTransaction().hide(mActiveFragment).show(recetasFragment).commit()
                     mActiveFragment = recetasFragment
                     true
                 }
                 R.id.action_Ejercicios -> {
+                    ocultarBtnAdd()
+                    ocultarBtnBack()
                     fragmentManager.beginTransaction().hide(mActiveFragment).show(ejerciciosFragment).commit()
                     mActiveFragment = ejerciciosFragment
                     true
                 }
                 R.id.action_Enfermedades -> {
+                    ocultarBtnAdd()
+                    ocultarBtnBack()
                     fragmentManager.beginTransaction().hide(mActiveFragment).show(enfermedadesFragment).commit()
                     mActiveFragment = enfermedadesFragment
                     true
                 }
                 R.id.action_profile -> {
+                    ocultarBtnAdd()
+                    ocultarBtnBack()
                     fragmentManager.beginTransaction().hide(mActiveFragment).show(profileFragment).commit()
                     mActiveFragment = profileFragment
                     true
@@ -144,6 +174,25 @@ class MainActivity : AppCompatActivity(), MainAux {
         }
 
     }
+
+    private fun ocultarBtnAdd(visible:Boolean = false){
+        if(visible){
+            mBinding.addButton.visibility = View.VISIBLE
+        }
+        else{
+            mBinding.addButton.visibility = View.GONE
+        }
+    }
+
+    private fun ocultarBtnBack(visible:Boolean = false){
+        if(visible){
+            mBinding.backForo.visibility = View.VISIBLE
+        }
+        else{
+            mBinding.backForo.visibility = View.GONE
+        }
+    }
+
 
     override fun onResume() {
         super.onResume()
