@@ -29,7 +29,7 @@ class EnfermedadesFragment : Fragment() {
         val webSettings: WebSettings = mBinding.webEnfermedades.settings
         webSettings.javaScriptEnabled = true
         mBinding.webEnfermedades.webViewClient = WebViewClient()
-        mBinding.webEnfermedades.loadUrl("https://proyectotg-8ef06.web.app/enfermedades/index.html")
+        mBinding.webEnfermedades.loadUrl("https://proyectotg-8ef06.web.app/Enfermedades/index.html")
 
     }
 

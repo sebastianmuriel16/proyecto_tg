@@ -36,7 +36,7 @@ class EjerciciosFragment : Fragment() {
         webSettings.allowFileAccessFromFileURLs = true
 
         mBinding.webEjercicios.webViewClient = WebViewClient()
-        mBinding.webEjercicios.loadUrl("https://proyectotg-8ef06.web.app/videos/index.html")
+        mBinding.webEjercicios.loadUrl("https://proyectotg-8ef06.web.app/Ejercicios/index.html")
 
     }
 }
