@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Prototipo_canino</string>
+    <string name="app_name">Buddy</string>
     <string name="home_title">Inicio</string>
     <string name="home_Recetas">Recetas\n</string>
     <string name="home_profile">perfil</string>
