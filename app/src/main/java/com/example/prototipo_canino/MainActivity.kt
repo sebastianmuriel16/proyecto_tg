@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity(), MainAux {
         super.onCreate(savedInstanceState)
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
+        supportActionBar?.hide()
         setupAuth()
     }
 
