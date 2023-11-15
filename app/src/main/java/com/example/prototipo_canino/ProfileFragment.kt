@@ -43,6 +43,7 @@ class ProfileFragment : Fragment(),FragmentAux {
 
         refresh()
         setupButton()
+        cambiarClave()
         cambiarFoto()
         firebaseStorage = FirebaseStorage.getInstance()
         firebaseDatabase = FirebaseDatabase.getInstance()
@@ -79,6 +80,15 @@ class ProfileFragment : Fragment(),FragmentAux {
         databaseRef.removeEventListener(valueEventListener)
     }
 
+    private fun cambiarClave(){
+        mBinding.changePasswordTv.setOnClickListener{
+            val intent = Intent(activity,ChangePassword::class.java)
+            activity?.startActivity(intent)
+        }
+
+    }
+
+
     private fun cambiarFoto(){
         mBinding.fotoperfil.setOnClickListener {
             val intent = Intent(activity,FotoPerfil::class.java)
@@ -99,6 +109,8 @@ class ProfileFragment : Fragment(),FragmentAux {
             }
         }
     }
+
+
 
     private fun singOut() {
         context?.let {

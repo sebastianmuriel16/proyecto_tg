@@ -22,4 +22,6 @@
     <string name="post_succes">Foto publicada\n</string>
     <string name="Comenta">Comenta\n</string>
     <string name="Ingrese_foto">presione sobre el icono para subir una foto</string>
+    <string name="cambiar_contraseña">cambiar contraseña</string>
+    <string name="indicaciones">por razones de seguridad, debes ingresar tu antigua contraseña para que el proceso sea valido</string>
 </resources>
