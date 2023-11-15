@@ -65,4 +65,7 @@ dependencies {
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-storage-ktx")
 
+    //esta dependecia es para el manejo imagenees del apartado de fotos de perfil
+    implementation 'com.karumi:dexter:6.2.3'
+
 }

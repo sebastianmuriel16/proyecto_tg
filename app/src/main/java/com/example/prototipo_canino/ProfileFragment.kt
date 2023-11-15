@@ -7,21 +7,34 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.prototipo_canino.databinding.FragmentProfileBinding
 import com.firebase.ui.auth.AuthUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
 
 
 class ProfileFragment : Fragment(),FragmentAux {
 
     private lateinit var mBinding: FragmentProfileBinding
+    private var firebaseStorage: FirebaseStorage? = null
+    private var firebaseDatabase: FirebaseDatabase? = null
+    private lateinit var databaseRef: DatabaseReference
+    private lateinit var valueEventListener: ValueEventListener
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         mBinding = FragmentProfileBinding.inflate(inflater,container,false)
+        databaseRef = FirebaseDatabase.getInstance().reference
         return mBinding.root
     }
 
@@ -31,7 +44,39 @@ class ProfileFragment : Fragment(),FragmentAux {
         refresh()
         setupButton()
         cambiarFoto()
+        firebaseStorage = FirebaseStorage.getInstance()
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        cargarFotoPerfil()
+    }
 
+    private fun cargarFotoPerfil(){
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        if (userId != null) {
+            valueEventListener = object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val profileImageUrl = snapshot.child("fotos_perfil/$userId/image").getValue(String::class.java)
+                    if (profileImageUrl != null) {
+                        context?.let {
+                            Glide.with(it)
+                                .load(profileImageUrl)
+                                .into(mBinding.fotoperfil)
+                        }
+                    } else {
+                        mBinding.fotoperfil.setImageResource(R.drawable.icono_foto_perfil)
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(context, "Error de base de datos", Toast.LENGTH_SHORT).show()
+                }
+            }
+            databaseRef.addValueEventListener(valueEventListener)
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        databaseRef.removeEventListener(valueEventListener)
     }
 
     private fun cambiarFoto(){
