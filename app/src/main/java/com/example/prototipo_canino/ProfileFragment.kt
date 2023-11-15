@@ -1,5 +1,6 @@
 package com.example.prototipo_canino
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -29,7 +30,15 @@ class ProfileFragment : Fragment(),FragmentAux {
 
         refresh()
         setupButton()
+        cambiarFoto()
 
+    }
+
+    private fun cambiarFoto(){
+        mBinding.fotoperfil.setOnClickListener {
+            val intent = Intent(activity,FotoPerfil::class.java)
+            activity?.startActivity(intent)
+        }
     }
 
     private fun setupButton(){
