@@ -20,5 +20,12 @@
     <string name="helper_requiered">Este campo es requerido\n</string>
     <string name="post_message_post_fail">No se logro subir la foto\n</string>
     <string name="post_succes">Foto publicada\n</string>
+
     <string name="Comenta">Comentar\n</string>
+
+
+    <string name="Ingrese_foto">presione sobre el icono para subir una foto</string>
+    <string name="cambiar_contraseña">cambiar contraseña</string>
+    <string name="indicaciones">por razones de seguridad, debes ingresar tu antigua contraseña para que el proceso sea valido</string>
+
 </resources>
