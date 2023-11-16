@@ -9,7 +9,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="main_auth_welcome">Bienvenido\n</string>
     <string name="dialog_delete_title">¿Eliminar la publicacion?</string>
-    <string name="dialog_delete_confirm">¿Eliminar?\n</string>
+    <string name="dialog_delete_confirm">¿Eliminar? \n</string>
     <string name="home_delte_photo_error">Error al eliminar la publicacion</string>
     <string name="dialog_delete_cancel">Cancelar</string>
     <string name="post_message_title">Seleccione una imagen</string>
@@ -20,5 +20,5 @@
     <string name="helper_requiered">Este campo es requerido\n</string>
     <string name="post_message_post_fail">No se logro subir la foto\n</string>
     <string name="post_succes">Foto publicada\n</string>
-    <string name="Comenta">Comenta\n</string>
+    <string name="Comenta">Comentar\n</string>
 </resources>
