@@ -116,7 +116,7 @@ class ProfileFragment : Fragment(),FragmentAux {
         context?.let {
             AuthUI.getInstance().signOut(it)
                 .addOnCompleteListener {
-                    Toast.makeText(context,"Hasta pronto...", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context,"Hasta pronto....", Toast.LENGTH_SHORT).show()
                     mBinding.tvName.text = ""
                     mBinding.tvEmail.text = ""
 
